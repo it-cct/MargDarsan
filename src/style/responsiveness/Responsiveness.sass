@@ -1,0 +1,160 @@
+@media only screen and (max-width: 768px)
+    .fixedNav
+        position: fixed
+        width: 100vw
+        height: 7vh
+        border: 1px solid yellow
+    .nav-page
+        height: 10vh
+        width: 100vw
+        border: 1px solid black
+    .navigation
+        height: 100%
+        border: 1px solid red
+        .nav-links
+            display: none  
+        .mobile-size
+
+            // border:1px solid blue
+            width: 30%
+            display: flex
+            justify-content: space-around
+            .i
+                font-size: 1.5rem
+                
+    .home
+        padding-top: 15vh 
+        // border: 1px solid red
+        .home-page
+            max-height: 70vh
+            grid-template-columns: 50% 50%
+            grid-template-rows: 50% 50%
+            // border: 1px solid black
+            .item3
+                // border: 1px solid red
+                grid-row:1/2
+            .item4
+                // border: 1px solid blue
+                grid-row: 1/2
+            p
+                font-size: 2rem
+    
+    // prouducts we are proud of page
+    .proudSection 
+        margin-top: 0
+        // border: 1px solid red
+        .prouducts
+            grid-template-columns: 50% 50%
+            grid-template-rows: 25% 25% 25% 25%
+            .inner-box-products
+                height: 30vh
+                &:nth-child(5)
+                    .imgException  
+                        height: 20vh        
+                    .goldtext
+
+                        // border: 1px solid green
+                        font-size: 1rem
+    
+        // for banner
+        .banner            
+            border: 1px solid yellow    
+            position: relative
+            margin-top: 10vh
+            height: 60vh
+            flex-direction: column
+            .banner-contant
+                height: 50%
+                width: 100%
+            .bannerImg
+                height: 50%
+                // border: 1px solid black
+                width: 100%
+    
+    // trending section
+    .trending
+        // border: 1px solid red
+        .trending-top-section
+            border: 1px solid red
+            align-items: center 
+            .heading-h1
+                font-size: 1.2rem
+                border: 1px solid yellow
+                width: 50%
+            .sliding-buttons
+                width: 20%  
+    
+    // outerBanner
+    .outerBanner
+        // border: 1px solid red
+        .banner
+            height: 60vh
+            flex-direction: column
+            .banner-contant
+                width: 100%
+            .bannerImg
+                width: 100%
+    
+    // footer
+    .footer
+        // border: 1px solid yellow
+        height: 50vh
+        
+        .upperpart
+            height: 60%
+            .textDiv
+                width: 80%
+                input
+                    font-size: 1.2rem
+                button
+                        font-size: 1.2rem
+        .lowerpart
+            height: 40%
+            .links
+                height: 10vh
+                align-items: center
+                flex-wrap: wrap
+    
+    // All category 
+    .host_all_layout_prouducts
+        // border: 1px solid red
+        display: grid
+        // width: 100%
+        grid-template-columns:50% 50%
+        grid-template-rows: auto
+        #i15, #i10,#i17, #i23, #i26
+            grid-column: 1/3
+
+        .inner-box-products
+            height: 30vh
+        #i15
+            position: relative
+            display: flex
+            flex-direction: row
+            // border: 1px solid black 
+            .imgException
+                // border: 1px solid red
+                width: 40%
+            .goldContent
+                // border: 1px solid red   
+                width: 50%
+                p
+                    padding: 0
+                    text-align: left
+                    font-size: 1rem
+    
+    // host layout navigation
+    .categoryNav
+        border: 1px solid red
+        nav
+            width: 90%
+            // border: 1px solid yellow
+            ul
+                flex-wrap: wrap
+                li
+                    padding: 1% 
+    .host_layout_prouducts
+        grid-template-columns:50% 50%
+        grid-template-rows: auto
+        .inner-box-products
+            height: 30vh

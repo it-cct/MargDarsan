@@ -1,0 +1,330 @@
+.home
+    padding-top:23vh
+    position: relative
+    // border: 1px solid red
+    height: 100vh 
+    display: flex
+    justify-content: space-around
+    width: 100%
+    .home-page
+        height:100%
+        // border: 1px solid black
+        width: 90%
+        position: relative
+        display: grid
+        grid-template-columns: 50% 25% 25% 
+        grid-template-rows: 50% 50%
+        div           
+            margin: 5px
+            position: relative
+            // border: 1px solid red
+        .item3
+            // border: 1px solid red
+            grid-row: 1/3
+        .item4
+            // border: 1px solid blue
+            grid-row: 1/3
+        p
+            // border:1px solid blue
+            bottom: 1rem
+            left: 1rem
+            position: absolute
+            font-weight: 600
+            font-size: 2.65rem
+            color: white
+        img
+            position: relative
+            height: 100%
+            width: 100%
+            object-fit: cover
+            object-position: center 
+            filter: brightness(0.7)
+            transition: all 0.3s
+            &:hover
+                transition: all 0.5s
+                filter: brightness(0.5)
+
+// Products we are proud of page
+
+.proudSection
+    margin-top: 10rem
+    // border: 1px solid red
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: right
+    h1  
+        width:90%
+        // border: 1px solid red
+        font-size: 1.5rem
+        padding: 1rem
+        position: relative        
+        
+    .prouducts
+        width: 90%
+        height: max-content
+        // border: 1px solid blue
+        display: grid
+        grid-template-columns: 25% 25% 25% 25%
+        grid-template-rows: 50% 50%
+        // grid-gap: 10px 10px
+        
+        .inner-box-products
+            position: relative
+            // width: 100%
+            height: 50vh
+            display: flex
+            flex-direction: column
+            border: 2px solid rgba(53, 53, 50, 0.25)
+            margin: 0.5rem
+            cursor: pointer
+            transition: all 0.5s ease
+            &:hover
+                border:2px solid black
+            &:nth-child(5)
+                grid-column: 1/3
+                // border: 1px solid red
+                display: flex
+                flex-direction: row
+                a
+                    display: flex
+                    flex-direction: row
+                .imgException
+                    position: relative
+                    height: 100%
+                    width: 50%
+                    // border:1px solid red
+                    margin: 0rem
+                    .goldLamp
+                        // border:1px solid blue
+                .goldContent
+                    margin: 0
+                    width:50%
+                    height: 100%
+                    // border:1px solid red   
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    .goldtext
+                        // border:1px solid blue
+                        font-weight: 300
+                        font-size: 2.3rem
+                        line-height: 2.2rem
+                    .goldbutton
+                        margin-top: 2rem
+                        padding:10px 20px 10px 20px
+                        border: none
+                        background-color: black
+                        color: white
+                        font-weight: 600
+                        font-size: 1.5rem
+                        cursor: pointer
+                        border: 1px solid black
+                        &:hover
+                            border: 1px solid black
+                            background-color: white
+                            color: black    
+            img
+                position: relative
+                height: 80%
+                object-fit: cover
+                object-position: center
+            div
+                border: none
+                margin: 0.5rem
+                p
+                    line-height: 1.8rem
+                    font-weight: 400
+                    font-size: 1.12rem
+                .price
+                    font-size: 1.4rem
+                    font-weight: 600
+    .banner
+        margin-top: 15vh
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 90%
+        // border: 1px solid red           
+        height: 50vh
+        background-color: rgb(233,233,233)
+
+        .banner-contant
+            width: 50%
+            // padding: 0 0 0 6rem
+            position: relative
+            // border: 1px solid black
+            h1
+                // padding: .5rem
+                font-size: 2rem
+                font-weight: 600
+                // text-align: center  
+            p
+                width: 80%
+                padding: 1rem
+                text-align: left
+            button
+                // width: 80%
+                color: white
+                background-color: black
+                font-size: 1.25rem
+                font-weight: 600
+                border: 2px solid black
+                margin: 1rem
+                padding:  .5rem 
+                cursor: pointer
+                transition: all 0.5s ease
+                &:hover
+                    background-color: rgb(233,233,233)  
+                    color: black
+        .bannerImg
+            // border: 1px solid red
+            width: 50%
+            height: 100%
+            position: relative
+            img
+                position: relative
+                height: 100%
+                width: 100%
+                object-position: center
+                object-fit: cover
+
+.trending
+    position: relative
+    margin-top: 15vh
+    // border:1px solid red
+    height: 70vh
+    display: flex
+    flex-direction: column
+    // justify-content: center
+    align-items: center
+    .trending-top-section
+        // border: 1px solid black
+        width:90%
+        height: 10vh
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        .heading-h1
+            // border:1px solid green
+            width: 80%
+        .sliding-buttons
+            position: relative
+            width: 10%  
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            height: 50%
+            // border:1px solid orange 
+            div
+                display: flex
+                align-items: center
+                justify-content: center
+                background-color: rgb(8, 32, 10) 
+                // border:1px solid red
+                width: 40%
+                height: 2rem
+                cursor: pointer
+    .trending-products::-webkit-scrollbar 
+        display: none
+    .trending-products
+        position: relative
+        display: flex 
+        flex-direction: row
+        width: 90%
+        // justify-content: space-around
+        overflow-x: scroll
+        // border:1px solid black 
+        scrollbar-width: none
+        -ms-overflow-style: none 
+        .inner-box-products 
+            position: relative
+            // width: 100%
+            height: 46vh
+            display: flex
+            flex-direction: column
+            border: 2px solid rgba(146, 146, 142, 0.25)
+            margin: 0.5rem
+            cursor: pointer
+            transition: all 0.5s ease
+            
+            &:hover
+                border:2px solid black
+            img
+                position: relative
+                height: 70%
+                object-fit: cover
+                object-position: center
+            div
+                border: none
+                margin: 0.5rem
+                p
+                    line-height: 1.3rem
+                    font-weight: 400
+                    font-size: 1.09rem
+                .price
+                    font-size: 1.4rem
+                    font-weight: 600
+.outerBanner
+    margin-top: 15vh
+    margin-bottom: 15vh
+    width:100%
+    positoin: relative
+    display: flex 
+    flex-direction: row
+    justify-content: center
+    // border: 1px solid black
+    .banner
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 90%
+        // border: 1px solid red               
+        height: 50vh
+        background-color: rgb(233,233,233)
+
+        .banner-contant
+            width: 50%
+            padding: 0 0 0 6rem
+            position: relative
+            // border: 1px solid black
+            h1
+                // padding: .5rem
+                font-size: 2rem
+                font-weight: 600
+                // text-align: center  
+            p
+                width: 80%
+                padding: 1rem
+                text-align: left
+            button
+                // width: 80%
+                color: white
+                background-color: black
+                font-size: 1.25rem
+                font-weight: 600
+                border: 2px solid black
+                margin: 1rem
+                padding:  .5rem 
+                cursor: pointer
+                transition: all 0.5s ease
+                &:hover
+                    background-color: rgb(233,233,233)  
+                    color: black
+        .bannerImg
+            // border: 1px solid red
+            width: 50%
+            height: 100%
+            position: relative
+            img
+                position: relative
+                height: 100%
+                width: 100%
+                object-position: center
+                object-fit: cove
