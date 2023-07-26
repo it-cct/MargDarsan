@@ -14,6 +14,7 @@ import HostLayout from './components/HostLayout'
 import ProductDisc from './pages/ProductDisc'
 import All from './components/All'
 import './style/responsiveness/Responsiveness.sass'
+import MenuPage from './pages/MenuPage'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/' element={<Layout></Layout>}>
             <Route index element={<Home/>}/>
             <Route path='/:itemName' element={<ProductDisc/>}></Route>
+            <Route path='menu' element={<MenuPage></MenuPage>}></Route>
 
             <Route path="category" element={<HostLayout/>}>
               <Route index element={<All/>}></Route>

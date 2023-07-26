@@ -25,7 +25,7 @@ const scrollPosition = Math.ceil(useScrollEvent());
             </div>
             <div className='mobile-size'>
                 <Link><MdShoppingCart className='i'></MdShoppingCart></Link>
-                <Link><MdSegment className='i'></MdSegment></Link>
+                <Link to="menu"><MdSegment className='i'></MdSegment></Link>
 
             </div>
         </nav>
