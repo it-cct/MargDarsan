@@ -15,6 +15,8 @@ import ProductDisc from './pages/ProductDisc'
 import All from './components/All'
 import './style/responsiveness/Responsiveness.sass'
 import MenuPage from './pages/MenuPage'
+import ShoopingCart from './pages/shoopingcart/ShoopingCart'
+
 
 const App = () => {
   return (
@@ -24,6 +26,7 @@ const App = () => {
             <Route index element={<Home/>}/>
             <Route path='/:itemName' element={<ProductDisc/>}></Route>
             <Route path='menu' element={<MenuPage></MenuPage>}></Route>
+            <Route path='cart' element={<ShoopingCart></ShoopingCart>}></Route>
 
             <Route path="category" element={<HostLayout/>}>
               <Route index element={<All/>}></Route>
