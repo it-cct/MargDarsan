@@ -3,6 +3,9 @@ import useProducts from '../hooks/useProducts'
 import { MdShoppingCart,MdSegment } from 'react-icons/md'
 import '../style/pages/Nav.sass'
 import { useScrollEvent } from '../hooks/useScrollEvent'
+import React from 'react'
+import ShoopingCart from './shoopingcart/ShoopingCart'
+
 const Nav = () => {
 // fetching logo from the useProduct hook
 const item = useProducts();
@@ -10,7 +13,9 @@ const [logo] =  item.filter((elem)=>elem.type==="logo")
 
 
 const scrollPosition = Math.ceil(useScrollEvent());
-  return (
+
+const [showcart, setShowcart] = React.useState(false);
+return (
     <div className={ scrollPosition >=5? 'fixedNav':'nav-page'} >
         <nav className='navigation'>
             <div className='logo'>
@@ -20,7 +25,7 @@ const scrollPosition = Math.ceil(useScrollEvent());
                 <ul>
                     <li><Link to={"category"}>Categories</Link></li>
                     <li><Link to={"sign-up"}>Sign-Up</Link></li>
-                    <Link to={"cart"}><MdShoppingCart></MdShoppingCart></Link>
+                    <Link onClick={()=>{setShowcart(!showcart)}}><span>1</span><MdShoppingCart></MdShoppingCart></Link>
                 </ul>
             </div>
             <div className='mobile-size'>
@@ -29,6 +34,22 @@ const scrollPosition = Math.ceil(useScrollEvent());
 
             </div>
         </nav>
+        {
+        showcart?
+        <section className='cart'>
+            <div className='cartBox'>
+                <div className="cartBoxHeader">
+                    <h1>Your Item is listed Here</h1>
+                    <h1 onClick={()=>{setShowcart(!showcart)}}>X</h1>
+                </div>
+                <div className='cartBoxItems'>
+                    <ShoopingCart></ShoopingCart>
+                </div>
+            </div>
+        </section>
+        : null
+        }
+        
     </div>
   )
 }

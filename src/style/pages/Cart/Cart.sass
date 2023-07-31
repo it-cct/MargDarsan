@@ -1,11 +1,77 @@
-.cart
-    z-index: 3
-    left: (100vw - 30vw)
-    position: absolute
-    background: white   
+.itemCard
+    border: 1px solid green
+    width: 90%
+    height: 20vh
     display: flex
-    flex-direction: column  
-    height: 100vh
-    width: 30vw
-    border: 1px solid red
-    padding-top: 7rem
+    flex-direction: row
+    margin-top: 2rem
+    background-color: #f2f2f2
+    .imagediv
+        img
+            width:100%
+            height: 100%
+            object-fit: cover
+            object-position: center
+    .iteminfo
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        header
+            position: relative
+            width: 100%
+            // border: 1px solid red
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            h1
+                width: 50%
+                font-size: 1rem
+                font-weight: 500
+                &:nth-child(2)
+                    padding: 1%
+                    text-align: right
+        footer
+            width: 100% 
+            height: 5vh
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            border: 1px solid green
+            .boxes
+                border: 1px solid red
+                height: 100%
+                width: 50%
+                display: flex
+                justify-content: space-evenly
+                font-size: 1rem
+                font-weight: 400   
+                text-align: center                 
+                .firstdiv
+                    display: flex
+                    flex-direction: row
+                    width: 100%
+                    justify-content: space-evenly
+                    border: 1px solid black
+                    p
+                        width: 33%
+                        // border: 1px solid red
+                        text-align: center
+                        // font-weight: 600
+                    .sign
+                        background-color: white 
+                        font-size: 1rem
+                        font-weight: 600
+                        cursor: pointer
+                        transition:0.6s ease all
+                        &:hover
+                            background-color: #E5E5E5 
+                    .num
+                        border-right: 1px solid black
+                        border-left: 1px solid black
+            .remove
+                cursor: pointer
+                width: 10%
+                text-align: center
+                border:1px solid red
+            

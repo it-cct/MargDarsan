@@ -49,7 +49,7 @@ const Home = () => {
             proudItems.map(i=>{
               if(i.id === 10){
                 return(
-                  <div className="inner-box-products"key={i.id}>
+                  <div className="inner-box-products" key={i.id}>
                     <Link to={`/${i.id}`} >
                     <div className="imgException">
                       <img className="goldLamp" src={i.img} alt="goldlamp"></img>
@@ -66,8 +66,8 @@ const Home = () => {
               }
               else{
                 return(
-                  <Link to={`${i.id}`}>
-                      <div  className="inner-box-products" key={i.id}>
+                  <Link to={`${i.id}`} key={i.id}>
+                      <div  className="inner-box-products" >
                     <img src={i.img} alt="" />
                     <div>
                       <p>{i.name}</p>
@@ -110,8 +110,8 @@ const Home = () => {
             <div className="trending-products" ref={ref}>
                 {proudItems.map(item=>{
                   return(
-                      <Link to={`${item.id}`}>
-                        <div  className="inner-box-products" key={item.id}>
+                      <Link to={`${item.id}`} key={item.id}>
+                        <div  className="inner-box-products" >
                           <img src={item.img} alt="" />
                           <div>
                             <p>{item.name}</p>

@@ -3,10 +3,14 @@ import useProducts from '../hooks/useProducts'
 import { useParams,Link } from 'react-router-dom'
 import '../style/pages/ProductDisc.sass'
 import { AiOutlineArrowRight,AiOutlineArrowLeft } from "react-icons/ai";
+import { AppProvider } from '../App';
 
 const ProductDisc = () => {
     const para = useParams();
     const productList = useProducts();
+
+    // gettin value from the contextProvider
+    const {setSlectedItem,slectedItem,setNumbitem,numbitem}= React.useContext(AppProvider)
 
     // to get the exact product comming from para
     const [item] = productList.filter(i=> i.id == para.itemName);
@@ -14,7 +18,7 @@ const ProductDisc = () => {
     // for searching the matching product 
     const typeofProdutct = item.type.length>0? item.type[1]: item.type[0];
     const proudItems = productList.filter(i=>item.type.includes(typeofProdutct) === i.type.includes(typeofProdutct))
-   console.log(typeofProdutct,proudItems)
+  //  console.log(typeofProdutct,proudItems)
 
 
     // for changing image
@@ -39,6 +43,23 @@ const ProductDisc = () => {
       setNum(num+1)
       setTotal(total+fvalue)
     }
+
+
+    // adding in shopping cart while clicking in add cart
+    const addCartHandler = ()=>{
+      setNumbitem(numbitem + 1)
+
+    // creating object to store all the slected item in shooping cart
+      //local storage for items
+      const cartCollection = {
+        name: item.name, 
+        img: item.img, 
+        price: item.price,  
+      }
+      setSlectedItem([...slectedItem,cartCollection])
+    }
+        
+      
 
 
     // horizontal scrolling
@@ -86,7 +107,7 @@ const ProductDisc = () => {
               </div>
 
               <div className='buttons'>
-                <button>ADD TO CART</button>
+                <button onClick={addCartHandler}>ADD TO CART</button>
                 <button>BUY NOW</button>
               </div>
         </div>
@@ -115,8 +136,8 @@ const ProductDisc = () => {
             <div className="trending-products" ref={ref}>
                 {proudItems.map(item=>{
                   return(
-                      <Link to={`${item.id}`}>
-                        <div  className="inner-box-products" key={item.id}>
+                      <Link to={`${item.id}`} key={item.id}>
+                        <div  className="inner-box-products" >
                           <img src={item.img} alt="" />
                           <div>
                             <p>{item.name}</p>

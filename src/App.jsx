@@ -16,10 +16,19 @@ import All from './components/All'
 import './style/responsiveness/Responsiveness.sass'
 import MenuPage from './pages/MenuPage'
 import ShoopingCart from './pages/shoopingcart/ShoopingCart'
-
-
+import Login from './pages/Login/Login'
+export const AppProvider = React.createContext();
 const App = () => {
+
+  // to get the slectedprodct from product Descreption page
+  const [slectedItem, setSlectedItem] = React.useState([])
+
+  //number of item selected 
+  const [numbitem, setNumbitem] = React.useState(0)
+
+
   return (
+    <AppProvider.Provider value={{slectedItem,setSlectedItem,numbitem,setNumbitem}}>
       <Router>
         <Routes>
           <Route path='/' element={<Layout></Layout>}>
@@ -27,7 +36,8 @@ const App = () => {
             <Route path='/:itemName' element={<ProductDisc/>}></Route>
             <Route path='menu' element={<MenuPage></MenuPage>}></Route>
             <Route path='cart' element={<ShoopingCart></ShoopingCart>}></Route>
-
+            <Route path='sign-up' element={<Login></Login>}></Route>
+            
             <Route path="category" element={<HostLayout/>}>
               <Route index element={<All/>}></Route>
               <Route path='tech' element={<Tech></Tech>}></Route>
@@ -42,6 +52,7 @@ const App = () => {
           
         </Routes>
       </Router>
+    </AppProvider.Provider>
   )
 } 
 
