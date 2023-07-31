@@ -29,7 +29,7 @@ return (
                 </ul>
             </div>
             <div className='mobile-size'>
-                <Link><MdShoppingCart className='i'></MdShoppingCart></Link>
+                <Link onClick={()=>{setShowcart(!showcart)}}><MdShoppingCart className='i'></MdShoppingCart></Link>
                 <Link to="menu"><MdSegment className='i'></MdSegment></Link>
 
             </div>
@@ -45,6 +45,15 @@ return (
                 <div className='cartBoxItems'>
                     <ShoopingCart></ShoopingCart>
                 </div>
+                <div className="fotter">
+                    <div className='total'>
+                        <p>Sub Total</p>
+                        <p>0$</p>
+                    </div>
+                    <div className='checkout'>
+                        <button>Check Out</button>
+                    </div>
+                </div> 
             </div>
         </section>
         : null

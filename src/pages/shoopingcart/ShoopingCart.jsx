@@ -48,7 +48,7 @@ const ShoopingCart = () => {
               <div className="remove" onClick={()=>{remove(items.name)}}><p>X</p></div>
              </footer>
               
-            </div>  
+            </div> 
           </div>
             )
           
