@@ -26,10 +26,11 @@ const App = () => {
   //number of item selected 
   const [numbitem, setNumbitem] = React.useState(0)
 
-  // total amount for checkout
-  const[totalAmt, setTotalAmt] = React.useState();
+  //  total amount for checkout
+  const[subTotal, setSubTotal] = React.useState(0)
+
   return (
-    <AppProvider.Provider value={{slectedItem,setSlectedItem,numbitem,setNumbitem,totalAmt,setTotalAmt}}>
+    <AppProvider.Provider value={{slectedItem,setSlectedItem,numbitem,setNumbitem,subTotal, setSubTotal}}>
       <Router>
         <Routes>
           <Route path='/' element={<Layout></Layout>}>

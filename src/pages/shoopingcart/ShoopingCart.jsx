@@ -3,22 +3,50 @@ import '../../style/pages/Cart/Cart.sass'
 import { AppProvider } from '../../App'
 
 const ShoopingCart = () => {
-    const{slectedItem,setSlectedItem} = React.useContext(AppProvider)
+    const{slectedItem,setSlectedItem,setSubTotal,  numbitem, setNumbitem} = React.useContext(AppProvider)
 
-    const  [num, setNum]=React.useState(1);
-    // addHandler
-    const addHandler = ()=>{
-      setNum(num+1); 
-    }
-    // minusHandler
-    const minusHandler = ()=>{
-      if(num>1){
-        setNum(num-1);
+   
+    // const addHandler = ()=>{
+    //   setNum((prev) => prev+1); 
+    // }
+    // const minusHandler = ()=>{
+    //   if(num>1){
+    //     setNum((prev)=> prev-1);
+    //   }
+    // }
+
+
+    // Calculate the total amount whenever slectedItem changes
+    React.useEffect(() => {
+      const total = slectedItem.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      setSubTotal(total);
+    }, [slectedItem]);
+  
+ // addHandler
+    const addHandler = (item) => {
+      setSlectedItem((prevItems) =>
+        prevItems.map((it) =>
+          it.name === item.name ? { ...it, quantity: it.quantity + 1 } : it
+        )
+      );
+      setSubTotal(item.quantity*item.price)
+    };
+
+    // minusHandler  
+    const minusHandler = (item) => {
+      if (item.quantity > 1) {
+        setSlectedItem((prevItems) =>
+          prevItems.map((it) =>
+            it.name === item.name ? { ...it, quantity: it.quantity - 1 } : it
+          )
+        );
+      setSubTotal(item.quantity*item.price)
+
       }
-    }
-
+    };
     // remove
     const remove =(nam)=>{
+      setNumbitem(  numbitem -1)
       const elem = slectedItem.filter(item=> item.name !== nam);
       setSlectedItem([...elem]);
     }
@@ -35,14 +63,14 @@ const ShoopingCart = () => {
             <div className='iteminfo'>
               <header>
                   <h1>{items.name}</h1>
-                  <h1>{(items.price) * num}$</h1>
+                  <h1>{(items.price) * (items.quantity)}$</h1>
              </header>
              <footer>
               <div className='boxes'>
                 <div className='firstdiv'>    
-                    <p className='sign' onClick={minusHandler}>-</p>
-                    <p className='num'>{num}</p>
-                    <p className='sign'onClick={addHandler}>+</p>
+                    <p className='sign' onClick={() => minusHandler(items)}>-</p>
+                    <p className='num'>{items.quantity}</p>
+                    <p className='sign' onClick={() => addHandler(items)}>+</p>
                 </div>
               </div>
               <div className="remove" onClick={()=>{remove(items.name)}}><p>X</p></div>

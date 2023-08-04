@@ -5,12 +5,13 @@ import '../style/pages/Nav.sass'
 import { useScrollEvent } from '../hooks/useScrollEvent'
 import React from 'react'
 import ShoopingCart from './shoopingcart/ShoopingCart'
-
+import { AppProvider } from '../App'
 const Nav = () => {
 // fetching logo from the useProduct hook
 const item = useProducts();
 const [logo] =  item.filter((elem)=>elem.type==="logo")
 
+const{subTotal,numbitem} = React.useContext(AppProvider)
 
 const scrollPosition = Math.ceil(useScrollEvent());
 
@@ -25,11 +26,11 @@ return (
                 <ul>
                     <li><Link to={"category"}>Categories</Link></li>
                     <li><Link to={"sign-up"}>Sign-Up</Link></li>
-                    <Link onClick={()=>{setShowcart(!showcart)}}><span>1</span><MdShoppingCart></MdShoppingCart></Link>
+                    <Link onClick={()=>{setShowcart(!showcart)}}><span>{numbitem !== 0 ? numbitem: " "}</span><MdShoppingCart></MdShoppingCart></Link>
                 </ul>
             </div>
             <div className='mobile-size'>
-                <Link onClick={()=>{setShowcart(!showcart)}}><MdShoppingCart className='i'></MdShoppingCart></Link>
+                <Link onClick={()=>{setShowcart(!showcart)}}><span>{numbitem !== 0 ? numbitem: " "}</span><MdShoppingCart className='i'></MdShoppingCart></Link>
                 <Link to="menu"><MdSegment className='i'></MdSegment></Link>
 
             </div>
@@ -48,7 +49,7 @@ return (
                 <div className="fotter">
                     <div className='total'>
                         <p>Sub Total</p>
-                        <p>0$</p>
+                        <p>{subTotal}$</p>
                     </div>
                     <div className='checkout'>
                         <button>Check Out</button>

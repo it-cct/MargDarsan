@@ -27,37 +27,43 @@ const ProductDisc = () => {
     
     // for total 
     const fvalue = item.price
-    const [total, setTotal] = useState(item.price)
     // for handling number of quantaty
     const [num, setNum] = useState(1);
     // minus handler
     const minusHandler = ()=>{
       if(num>1){
           setNum(num-1)
-          setTotal(total-fvalue)
-
       }
     }
     // add handler
     const addHandler = ()=>{
       setNum(num+1)
-      setTotal(total+fvalue)
+      console.log(num)
     }
-
+  
 
     // adding in shopping cart while clicking in add cart
     const addCartHandler = ()=>{
-      setNumbitem(numbitem + 1)
-
-    // creating object to store all the slected item in shooping cart
-      //local storage for items
-      const cartCollection = {
-        name: item.name, 
-        img: item.img, 
-        price: item.price,  
-      }
-      setSlectedItem([...slectedItem,cartCollection])
+        setNumbitem(numbitem +1)
+        if(slectedItem?.every(it => it?.name !== item.name )){
+          setNumbitem(numbitem + 1)
+          // creating object to store all the slected item in shooping cart
+          //local storage for items
+          const cartCollection = {
+            name: item.name, 
+            img: item.img,  
+            price: item.price,
+            quantity: num,  
+            }
+            setSlectedItem([...slectedItem,cartCollection])
+          }
+        else{
+          const [h]= slectedItem.filter(it=> it.name === item.name)
+          h.quantity = h.quantity + num
+          console.log(h.quantity)
+        }
     }
+        
         
       
 
@@ -103,9 +109,8 @@ const ProductDisc = () => {
                     <p className='sign'onClick={addHandler}>+</p>
                 </div>
 
-                <div><h3>{total}$</h3></div>
+                <div><h3>{item.price * num}$</h3></div>
               </div>
-
               <div className='buttons'>
                 <button onClick={addCartHandler}>ADD TO CART</button>
                 <button>BUY NOW</button>
