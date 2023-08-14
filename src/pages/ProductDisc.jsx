@@ -13,11 +13,11 @@ const ProductDisc = () => {
     const {setSlectedItem,slectedItem,setNumbitem,numbitem}= React.useContext(AppProvider)
 
     // to get the exact product comming from para
-    const [item] = productList.filter(i=> i.id == para.itemName);
+    const [item] = productList.filter(i=> i.name == para.itemName);
 
     // for searching the matching product 
     const typeofProdutct = item.type.length>0? item.type[1]: item.type[0];
-    const proudItems = productList.filter(i=>item.type.includes(typeofProdutct) === i.type.includes(typeofProdutct))
+    const proudItems = productList.filter(i=>item.type.includes(typeofProdutct) === i.type.includes(typeofProdutct) && i.id>=6)
   //  console.log(typeofProdutct,proudItems)
 
 
@@ -141,7 +141,7 @@ const ProductDisc = () => {
             <div className="trending-products" ref={ref}>
                 {proudItems.map(item=>{
                   return(
-                      <Link to={`${item.id}`} key={item.id}>
+                      <Link to={`/${item.name}`} key={item.id} onClick={()=>{setImg(item.img)}}>
                         <div  className="inner-box-products" >
                           <img src={item.img} alt="" />
                           <div>

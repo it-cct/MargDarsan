@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 const SkinCare = () => {
     const proucts = useProducts()
-    const skinCareItems = proucts.filter((items)=> items.type.includes("skinCare"))
+    const skinCareItems = proucts.filter((items)=> items.type.includes("skinCare")&& items.id>=6)
     return (
       <div className='host_layout_prouducts'>
       {
           skinCareItems.map(item=>{
               return(
-                  <Link to={':id'} key={item.id}>
+                  <Link to={`/${item.name}`} key={item.id}>
                     <div  className="inner-box-products" key={item.id}>
                   <img src={item.img} alt="" />
                   <div>

@@ -9,7 +9,7 @@ const Lamp = () => {
     {
         lampItems.map(item=>{
             return(
-                <Link to={':id'} key={item.id}>
+                <Link to={`/${item.name}`} key={item.id}>
                   <div  className="inner-box-products" key={item.id}>
                 <img src={item.img} alt="" />
                 <div>

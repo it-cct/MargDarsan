@@ -11,7 +11,7 @@ const All = () => {
           if (i.id === 10 ) {
             return (
               <div className="inner-box-products" key={i.id} id='i10'>
-                <Link>
+                <Link to={`/${i.name}`}>
                 <div className="imgException">
                   <img className="goldLamp" src={i.img} alt="goldlamp"></img>
                 </div>
@@ -27,7 +27,7 @@ const All = () => {
           else if (i.id === 15 ){
             return (
                 <div className="inner-box-products" key={i.id} id='i15'>
-                  <Link>
+                  <Link to={`/${i.name}`}>
                   <div className="imgException">
                     <img className="goldLamp" src={i.img} alt="goldlamp"></img>
                   </div>
@@ -43,7 +43,7 @@ const All = () => {
           else if (i.id=== 17 ){
             return (
                 <div className="inner-box-products" key={i.id} id='i17'>
-                  <Link>
+                  <Link to={`/${i.name}`}>
                   <div className="imgException">
                     <img className="goldLamp" src={i.img} alt="goldlamp"></img>
                   </div>
@@ -59,7 +59,7 @@ const All = () => {
           else if (i.id === 23){
             return (
                 <div className="inner-box-products" key={i.id} id='i23'>
-                  <Link>  
+                  <Link to={`/${i.name}`}>  
                   <div className="imgException">
                     <img className="goldLamp" src={i.img} alt="goldlamp"></img>
                   </div>
@@ -75,7 +75,7 @@ const All = () => {
           else if (i.id === 26 ){
             return (
                 <div className="inner-box-products" key={i.id} id='i26'>
-                  <Link>
+                  <Link to={`/${i.name}`}>
                   <div className="imgException">
                     <img className="goldLamp" src={i.img} alt="goldlamp"></img>
                   </div>
@@ -90,7 +90,7 @@ const All = () => {
           }
           else {
             return (
-              <Link>
+              <Link to={`/${i.name}`}>
                 <div className="inner-box-products" key={i.id}>
                 <img src={i.img} alt="" />
                 <div>
