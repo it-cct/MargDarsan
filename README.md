@@ -39,7 +39,7 @@ Depending on your interests, explore advanced topics such as Progressive Web App
 ## 10. Testing:
 - Learn about unit testing, integration testing, and end-to-end testing for web applications.
 
-##11. DevOps and Continuous Integration/Continuous Deployment (CI/CD):
+## 11. DevOps and Continuous Integration/Continuous Deployment (CI/CD):
 - Familiarize yourself with CI/CD pipelines and tools like Jenkins, Travis CI, or GitHub Actions.
 
 ## 12. Performance Optimization:
@@ -57,7 +57,7 @@ Depending on your interests, explore advanced topics such as Progressive Web App
 ## 16. Soft Skills:
 - Develop communication, problem-solving, and teamwork skills. Web development often involves collaboration with designers, back-end developers, and clients.
 
-17. Career Planning:
+## 17. Career Planning:
 - Consider your career goals, whether it's freelancing, working for a company, or starting your own web development business.
 
 Remember that web development is a journey, and it's perfectly okay to focus on specific areas that align with your goals and interests. Continuously practice, build projects, and seek feedback to improve your skills as a web developer
