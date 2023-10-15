@@ -13,7 +13,7 @@ const ProductDisc = () => {
     const {setSlectedItem,slectedItem,setNumbitem,numbitem}= React.useContext(AppProvider)
 
     // to get the exact product comming from para
-    const [item] = productList.filter(i=> i.name == para.itemName);
+    const [item] = productList.filter(i=> i.name === para.itemName);
 
     // for searching the matching product 
     const typeofProdutct = item.type.length>0? item.type[1]: item.type[0];
@@ -60,7 +60,7 @@ const ProductDisc = () => {
         else{
           const [h]= slectedItem.filter(it=> it.name === item.name)
           h.quantity = h.quantity + num
-          console.log(h.quantity)
+          // console.log(h.quantity)
         }
     }
         

@@ -28,7 +28,7 @@ const Home = () => {
             //rendering items in landing page
             product.map(item=>(
               <div key={item.id} className={`item${item.id+1}`}>
-                <Link to={`category/${item.type[1]}`}>
+                <Link to={`category?type=${item.type[1]}`}>
                 <img src={item.img} alt="" />
                 <p>{item.name}</p>
                 </Link>
