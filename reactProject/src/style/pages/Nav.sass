@@ -1,0 +1,129 @@
+.fixedNav
+    position: fixed
+    // border:1px solid red
+    // margin-bottom: 1.2rem
+    display: flex
+    flex-direction: row
+    width: 100%
+    height: 10vh
+    justify-content: space-around
+    transition: all 0.2s ease
+    z-index: 1
+    background-color: white 
+    box-shadow: 1px 1px 40px 3px rgb(141, 139, 138)
+
+.nav-page
+
+    // border:4px solid red
+    position: fixed
+    // margin-bottom: 1.2rem
+    display: flex
+    flex-direction: row
+    width: 100%
+    height: 15vh
+    z-index: 1
+    justify-content: space-around
+    transition: all 0.2s ease
+    background: white   
+    box-shadow: 1px 1px 40px 3px rgb(141, 139, 138)
+    
+.navigation
+        // border: 1px solid yellowgreen
+        position: relative
+        width: 90%
+        height: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        .logo
+            // border: 1px solid darkblue
+            position: relative
+            height: 80%
+            a
+                height: 100%
+                img
+                    height: 100%
+                    // border: 1px solid pink
+        .nav-links
+            width: 30%
+            // border: 1px solid green
+            ul
+                widows: 100%
+                position: relative
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                text-transform: uppercase
+                font-weight: 400
+                font-size: 1.3rem
+                li
+                    list-style: none
+                a
+                    // border: 1px solid black
+                    span
+                        color: red   
+                    &:hover
+                        border-bottom: 1px solid black
+                        transition: all 0.5s
+        .mobile-size
+            display: none
+.cart
+    position: absolute
+    background: rgba(22, 22, 23, 0.572)
+    height: 100vh
+    width:   100%
+    z-index: 1
+    // border: 1px solid red
+    display: flex
+    flex-direction: row-reverse
+
+    .cartBox
+        position: relative
+        // border: 1px solid red
+        width: 30%
+        left: (100vw- 70%)
+        background-color: white 
+        min-height: 100vh
+        .cartBoxHeader
+            position: relative
+            display: flex
+            width: 100%
+            flex-direction: row
+            justify-content: space-between
+            padding:2%
+            h1
+                font-weight: 500
+                &:nth-child(2)
+                    cursor: pointer
+        .cartBoxItems
+            width:100%
+            height: 80% 
+            position: relative
+            display: flex
+            flex-direction: column
+            align-items: center
+            // border: 1px solid red
+            overflow-y: auto
+        .fotter
+            width: 100%
+            height: 10vh
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            border-top: 2px dashed black
+            p
+                padding: 5px
+                font-weight: 600
+                font-size: 1.2rem
+            button
+                background-color: white
+                font-size: 1.2rem
+                border: 2px solid black
+                height: 5vh
+                width: 10vw
+                cursor: pointer
+                &:hover
+                    background-color: black
+                    color: white     
